@@ -4,44 +4,36 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="main.css" />
     <script src="bundle.js" async></script>
-    <script src="https://cdn-tailwindcss.vercel.app/?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1 data-controller="example"></h1>
-
     <!-- tags start -->
-    <div
-      data-controller="tag"
-      x-data
-      @tags-update="console.log('tags updated', $event.detail.tags)"
-      data-tags='["aaa","bbb"]'
-      class="max-w-lg m-6"
-    >
-      <div
-        x-data="tagSelect()"
-        x-init="init('parentEl')"
-        @click.away="clearSearch()"
-        @keydown.escape="clearSearch()"
-      >
-        <div class="relative" @keydown.enter.prevent="addTag(textInput)">
+    <div data-controller="tag" class="max-w-lg m-6">
+      <div>
+        <div class="relative">
           <input
-            x-model="textInput"
-            x-ref="textInput"
-            @input="search($event.target.value)"
+            data-tag-target="input"
+            data-action="tag#showAddTags keydown->tag#submitHandler"
+            type="text"
+            value=""
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter some tags"
           />
-          <div :class="[open ? 'block' : 'hidden']">
+          <div data-tag-target="hidden" class="hidden">
             <div class="absolute z-40 left-0 mt-2 w-full">
               <div
                 class="py-1 text-sm bg-white rounded shadow-lg border border-gray-300"
               >
                 <a
-                  @click.prevent="addTag(textInput)"
+                  data-action="click->tag#submitHandler"
                   class="block py-1 px-5 cursor-pointer hover:bg-indigo-600 hover:text-white"
                   >Add tag "<span
                     class="font-semibold"
-                    x-text="textInput"
+                    data-tag-target="add"
                   ></span
                   >"</a
                 >
@@ -49,16 +41,13 @@
             </div>
           </div>
           <!-- selections -->
-          <template x-for="(tag, index) in tags">
+          <template data-tag-target="tagTemplate">
             <div
+              data-inner-remove-key='${key}'
               class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1"
             >
-              <span
-                class="ml-2 mr-1 leading-relaxed truncate max-w-xs"
-                x-text="tag"
-              ></span>
-              <button
-                @click.prevent="removeTag(index)"
+              <span class="ml-2 mr-1 leading-relaxed truncate max-w-xs">${text}</span>
+              <button data-tag-key-param='${key}' data-action="click->tag#removeTagHandler"
                 class="w-6 h-8 inline-block align-middle text-gray-500 hover:text-gray-600 focus:outline-none"
               >
                 <svg
@@ -75,6 +64,9 @@
             </div>
           </template>
         </div>
+      </div>
+      <div data-tag-target="tagSpan">
+        <!-- This will be replaced with the interpolated tags  -->
       </div>
     </div>
     <!-- tags end -->
