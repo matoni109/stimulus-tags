@@ -43,11 +43,15 @@
           <!-- selections -->
           <template data-tag-target="tagTemplate">
             <div
-              data-inner-remove-key='${key}'
+              data-inner-remove-key="${key}"
               class="bg-indigo-100 inline-flex items-center text-sm rounded mt-2 mr-1"
             >
-              <span class="ml-2 mr-1 leading-relaxed truncate max-w-xs">${text}</span>
-              <button data-tag-key-param='${key}' data-action="click->tag#removeTagHandler"
+              <span class="ml-2 mr-1 leading-relaxed truncate max-w-xs"
+                >${text}</span
+              >
+              <button
+                data-tag-key-param="${key}"
+                data-action="click->tag#removeTagHandler"
                 class="w-6 h-8 inline-block align-middle text-gray-500 hover:text-gray-600 focus:outline-none"
               >
                 <svg
@@ -66,7 +70,7 @@
         </div>
       </div>
       <div data-tag-target="tagSpan">
-        <!-- This will be replaced with the interpolated tags  -->
+        <!-- interpolated tags will go here -->
       </div>
     </div>
     <!-- tags end -->
