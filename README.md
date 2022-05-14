@@ -1,4 +1,4 @@
-# Stimuls Tags
+# Stimulus Tags
 
 Inspired by [this](https://codepen.io/atomgiant/pen/QWjWgKz) CodePen, I've ported it over the Stimulus, with a dash of `lodash` for the use of `<template>`.
 
