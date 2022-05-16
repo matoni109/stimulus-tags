@@ -2,8 +2,9 @@
 
 Inspired by [this](https://codepen.io/atomgiant/pen/QWjWgKz) CodePen, I've ported it over the Stimulus, with a dash of `lodash` for the use of `<template>`.
 
-## ![tags](https://cdn.glitch.global/21b83300-9c0e-456d-ac73-7d9c33e9c2e7/983959d0-d7f4-43e1-a1c8-6ecb04ec59a0.image.png?v=1652517044492")
+## demo
 
+https://user-images.githubusercontent.com/68096885/168501134-bcf52d38-5471-4965-b988-40e5c595304e.mov
 ```bash
 # to setup locally
 $ yarn install
