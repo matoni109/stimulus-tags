@@ -2,6 +2,8 @@
 
 Inspired by [this](https://codepen.io/atomgiant/pen/QWjWgKz) CodePen, I've ported it over the Stimulus, with a dash of `lodash` for the use of `<template>`.
 
+Allows clickable `tag` being added to the `dom` and removed using `stimulus.js`
+
 ## demo
 
 https://user-images.githubusercontent.com/68096885/168501134-bcf52d38-5471-4965-b988-40e5c595304e.mov
@@ -18,5 +20,6 @@ You can [remix `stimulus-tags` on Glitch](https://glitch.com/edit/#!/import/git?
 [![Check out on Github](https://cdns.iconmonstr.com/wp-content/releases/preview/2012/96/iconmonstr-github-5.png)](https://github.com/matoni109/stimulus-tags)
 
 ---
+tags: stimulus js tags, tags, javascript tags, stimulus tags
 
 matoni109
